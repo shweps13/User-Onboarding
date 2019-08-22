@@ -70,13 +70,15 @@ input:last-child {
 
 .checkbox-container {
   display: flex;
+  width: 60%;
+  margin: 0 20% 0 20%;
 }
 
 .checkbox-container p {
-  margin-top: 1%;
+  margin-top: 5px;
   /* background-color: aquamarine; */
-  width: 40%;
-  margin-left: 13%;
+  width: 60%;
+  margin-left: 0%;
   
 }
 
