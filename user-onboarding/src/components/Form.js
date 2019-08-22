@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-const HtmlForm = ({ values, errors, touched }) => {
- 
+const HtmlForm = ({ values, errors, touched, status }) => {
+    const [users, setUsers] = useState([]);
+    console.log("this is touched", touched);
+    useEffect(() => {
+      if (status) {
+        setUsers([...users, status]);
+      }
+    }, [status]);
+
+
     return (
       <div className="onboarding-form">
           <h2>Onboarding Form</h2>
@@ -39,6 +47,16 @@ const HtmlForm = ({ values, errors, touched }) => {
             </label>
             <button type="submit">Submit!</button>
           </Form>
+
+        {users.map(user => (
+        <div className="sent-block">
+            <div key={user.id}>
+            <h3>Name: {user.username}</h3>
+            <p>Mail: {user.email}</p>
+            <p>Type: {user.acctype}</p>
+            </div>
+        </div>
+    ))}
 
       </div>
     );
