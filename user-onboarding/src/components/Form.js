@@ -8,8 +8,8 @@ const HtmlForm = ({ values }) => {
           <h2>Onboarding Form</h2>
           <Form className="in-form">
             <Field type="text" name="username" placeholder="Full name here" />
-            <Field type="text" name="email" placeholder="Email here" />
-            <Field type="text" name="passwd" placeholder="Enter your password" />
+            <Field type="email" name="email" placeholder="Email here" />
+            <Field type="password" name="passwd" placeholder="Enter your password" />
             <Field component="select" className="acc-select" name="acctype">
                 <option>Please choose your account type</option>
                 <option value="permanent">Permanent</option>
