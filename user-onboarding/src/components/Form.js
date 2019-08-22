@@ -3,7 +3,7 @@ import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-const HtmlForm = ({ values, errors, touched, status }) => {
+const HtmlForm = ({ values, errors, touched, status, isValidating }) => {
     const [users, setUsers] = useState([]);
     console.log("this is touched", touched);
     useEffect(() => {
@@ -12,6 +12,14 @@ const HtmlForm = ({ values, errors, touched, status }) => {
       }
     }, [status]);
 
+
+    function validateEmail(value) {
+        let error;
+        if (value === 'waffle@syrup.com') {
+          error = 'That email is already taken.';
+        }
+        return error;
+      }
 
     return (
       <div className="onboarding-form">
@@ -22,12 +30,10 @@ const HtmlForm = ({ values, errors, touched, status }) => {
             <p className="error">{errors.username}</p>
             )}
 
-            <Field type="email" name="email" placeholder="Email here" />
-            {touched.email && errors.email && (
-            <p className="error">{errors.email}</p>
-            )}
+            <Field type="email" name="email" placeholder="Email here"  validate={validateEmail} />
+            {errors.email && touched.email && <p className="error">{errors.email}</p>}
 
-            <Field type="password" name="passwd" placeholder="Enter your password" />
+            <Field type="password" name="passwd" placeholder="Enter your password"/>
             {touched.passwd && errors.passwd && (
             <p className="error">{errors.passwd}</p>
             )}
