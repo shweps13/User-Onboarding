@@ -6,7 +6,7 @@ const HtmlForm = ({ values }) => {
     return (
       <div className="onboarding-form">
           <h2>Onboarding Form</h2>
-          <Form>
+          <Form className="in-form">
             <Field type="text" name="username" placeholder="Full name here" />
             <Field type="text" name="email" placeholder="Email here" />
             <Field type="text" name="passwd" placeholder="Enter your password" />
@@ -16,7 +16,7 @@ const HtmlForm = ({ values }) => {
                 <option value="temporary">Temporary</option>
             </Field>
             <label className="checkbox-container">
-                Terms of Service
+                <p>Accept Terms of Service</p>
                 <Field type="checkbox" name="terms" checked={values.terms} />
             </label>
             <button type="submit">Submit!</button>

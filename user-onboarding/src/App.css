@@ -33,5 +33,56 @@
 }
 
 .onboarding-form {
-  background-color: lightgray;
+  background-color: rgb(233, 233, 233);
+  width: 60%;
+  margin: 3% 20% 0 20%;
+  border-radius: 10px;
+  border: 1px solid gray;
+
+}
+
+.in-form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 70%;
+  margin: 0 15%;
+  margin-bottom: 1.5%;
+  height: 30px;
+}
+input:last-child {
+  width: 4%;
+  margin-top: 0;
+  margin-left: 1.5%;
+  /* margin-top: 1.5%; */
+}
+
+
+.acc-select {
+  width: 70%;
+  margin: 0 15%;
+  margin-bottom: 1.5%;
+}
+
+.checkbox-container {
+  display: flex;
+}
+
+.checkbox-container p {
+  margin-top: 1%;
+  /* background-color: aquamarine; */
+  width: 40%;
+  margin-left: 13%;
+  
+}
+
+button {
+  width: 50%;
+  margin: 2% 25% 3% 25%;
+  padding: 3% 0;
+  border-radius: 5px;
 }
