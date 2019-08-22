@@ -1,18 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Form from './components/Form'
+import HtmlForm from './components/Form'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>
-          Form app
+          User Onboarding app
         </h1>
       </header>
-      <Form />
+      <HtmlForm />
     </div>
   );
 }
