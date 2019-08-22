@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 const HtmlForm = ({ values, errors, touched }) => {
  
@@ -75,7 +76,17 @@ const FormikHtmlForm = withFormik ({
       ),
     }),
 
-})(HtmlForm);
+    handleSubmit(values, { setStatus }) {
+        axios
+          .post("https://reqres.in/api/users/", values)
+          .then(res => {
+            setStatus(res.data);
+            console.log("Form was succesfully sent! Woo-hoo!");
+          })
+          .catch(err => console.log(err.response));
+      }
 
+})(HtmlForm);
+// console.log("Form: ", FormikHtmlForm);
 
 export default FormikHtmlForm;
